@@ -1,0 +1,102 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    <a href="javascript:;" id="btn">异步加载</a>
+<div id="show"></div>
+
+    <!--
+
+
+    1,异步加载: 在页面不刷新的情况下加载服务器的最新数据就叫异步
+        ajax:异步的js(jq)与xml(只是一种格式,xml,json,html,text);
+
+        ajax本来可,但由于浏览器的同源策略才不成了。
+
+        同源策略:同端口 同域名 同协议。
+
+
+        不允许通信 : 不同端口,不同协议, 域名和域名对应ip, 子域不同, 不同二级域名,  不同域名,
+
+
+    2,伪异步加载:
+    ajax不支持跨域,不能讯问其它域名下的接口或链接
+
+    服务器代理:服务器讯问别的服务器,向后台发url,后台获取其它下的内容,再数据给前台,
+        速度没法保证,频繁发请求会有可能导致接口有问题。
+
+    JSONP: 原理,通过script引入的方式,用回调放参数,
+    1,跨域,
+    2,不受限于XMLHtttpRequest
+
+
+
+
+
+
+
+
+
+    -->
+
+    <script>
+        function jsAjax(){
+            var xhr = new XMLHttpRequest();//AJax的核心对象  ActiveXObject(IE6)
+            xhr.onreadystatechange = function () {//状态改变后更新
+                if(xhr.status == 200){//返回成功
+                    if(xhr.readyState == 4){
+                        // debugger;
+                        var data = JSON.parse(xhr.responseText);
+                        alert(data.name);
+                    }
+                }
+            };
+            xhr.open("post","http://www.192.168.80.114/text.json");//post/get ,链接出口,同步或异步
+            xhr.setRequestHeader("Content-Type","application/www-x-form-urlencoded");
+            xhr.send(null);
+        }
+
+        document.getElementById("btn").onclick = function(){
+            jsAjax();
+        };
+
+
+
+
+
+
+
+
+        function jqAjax(){
+            $.ajax({
+                "type":"get",
+                "url":"",
+                "sucess":function(){
+
+                }
+            })
+        }
+
+
+
+
+
+
+
+        function text(name){//这个是服务器回调的方法
+            document.getElementById("show").tex
+        }
+
+        function createScript(){
+            var eleScript = document.createElement("script");
+            eleScript.type = "text/javascript";
+            eleScript.src= "";
+            document.getElementsByTagName("head")[0].appendChild(eleScript);
+
+        }
+    </script>
+
+    </body>
+</html>
