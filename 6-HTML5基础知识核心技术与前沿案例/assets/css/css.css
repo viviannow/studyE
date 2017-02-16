@@ -1,0 +1,21 @@
+html,body{
+    height:100%;/*浏览器黑夜是没给body高度属性的,要给body及其父级html高度属性一般不用*/
+    font-family:sans-serif;/*无衬线字体(是系统默认的字体)*/
+    text-transform:uppercase;/*字体转大写*/
+    background-size:cover;
+    margin:0;padding:0;
+}
+
+#container{
+    background-color: #333;height: 500px;
+    width:100%;
+    position:absolute;
+    top:50%;
+    /*上下居中设置 未知高度*/
+    transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+
+}

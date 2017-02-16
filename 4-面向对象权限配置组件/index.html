@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象权限配置组件</title>
+    <link rel="stylesheet" href="assets/userRoleSelector/css/userRoleSelector.css">
+</head>
+<body>
+ <!--<div class="user-role-selector">-->
+     <!--<ul id="left-list" class="data-list">-->
+         <!--<li>remeber1</li>-->
+         <!--<li>remeber2</li>-->
+         <!--<li>remeber3</li>-->
+         <!--<li>remeber4</li>-->
+         <!--<li>remeber5</li>-->
+         <!--<li>remeber6</li>-->
+     <!--</ul>-->
+     <!--<div class="data-oper">-->
+         <!--<a href="" id="add" class="button">add</a>-->
+         <!--<a href="" id="del" class="button">del</a>-->
+     <!--</div>-->
+     <!--<ul id="right-list" class="data-list">-->
+
+     <!--</ul>-->
+ <!--</div>-->
+<button id="showSelector" class="showSelector button">配置用户角色</button>
+
+<script src="assets/userRoleSelector/js/userRoleSelector.js"></script>
+ <script>
+     window.onload = function () {
+
+         //构建对象的实例
+         var selector = new UserRoleSelector({
+                show:false,
+                onSave:function (selector) {
+                    alert(1);
+
+                }
+         });
+         document.getElementById("showSelector").onclick = function(){
+//             alert(1);
+             if(selector.status){
+                 selector.hide();//让实例显示
+             }else{
+                 selector.show();//让实例显示
+             }
+         }
+         
+     }
+ </script>
+</body>
+</html>
