@@ -29,18 +29,19 @@
  <script>
      window.onload = function () {
 
-         //构建对象的实例
+         //通过构造器传入参数,构建对象的实例
          var selector = new UserRoleSelector({
                 show:false,
                 onSave:function (selector) {
                     alert(1);
-
                 }
          });
+
+         //实例操作
          document.getElementById("showSelector").onclick = function(){
-//             alert(1);
+             // alert(1);
              if(selector.status){
-                 selector.hide();//让实例显示
+                 selector.hide();//调用对象实例的方法
              }else{
                  selector.show();//让实例显示
              }

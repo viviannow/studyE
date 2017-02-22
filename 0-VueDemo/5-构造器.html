@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="assets/js/vue.js"></script>
+</head>
+<body>
+
+<script>
+    var vm = new Vue({
+        // 选项
+    });
+    console.log(vm);
+
+
+
+//    可以扩展 Vue 构造器，从而用预定义选项创建可复用的组件构造器：
+    var MyComponent = Vue.extend({
+        // 扩展选项
+    });
+    // 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建
+    var myComponentInstance = new MyComponent()
+    console.log(myComponentInstance);
+
+
+
+</script>
+</body>
+</html>
